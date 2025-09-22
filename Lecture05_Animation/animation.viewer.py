@@ -5,7 +5,17 @@ open_canvas()
 character = load_image('Drill04-sheet.png')
 
 # fill here
-frame = 0
+sheet_x = 44
+sheet_y = 56
+
+def roll():
+    frame = 0
+    for x in range(0, 800, 7):
+        clear_canvas()
+        character.clip_draw(frame * 100, 0, sheet_x, sheet_y, 400, 300, 300, 300)
+        update_canvas()
+        frame = (frame + 1) % 10
+        delay(0.05)
 
 def walk():
     pass
@@ -13,17 +23,10 @@ def walk():
 def run():
     pass
 
-def rolling():
-    pass
 
 def stand():
     pass
 
-for x in range(0,800,10):
-    clear_canvas()
-    character.clip_draw(frame*100,0,44,56,400,300,500,500)
-    update_canvas()
-    frame = (frame + 1)%9
-    delay(0.05)
+rolling()
 
 close_canvas()
