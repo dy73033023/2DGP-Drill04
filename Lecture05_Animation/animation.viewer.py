@@ -26,9 +26,6 @@ def stand():
         frame = (frame + 1) % 5
         delay(0.05)
 
-def walk():
-    pass
-
 def run():
     frame = 0
     for x in range(0, 400, 10):
@@ -38,10 +35,15 @@ def run():
         frame = (frame + 1) % 6
         delay(0.1)
 
+def walk():
+    pass
+
+
+
 
 while(1): #무한 반복
-    #roll()
-    #stand()
-    walk()
+    roll()
+    stand()
+    run()
 
 close_canvas()
