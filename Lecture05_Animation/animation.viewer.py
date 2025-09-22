@@ -8,13 +8,22 @@ character = load_image('Drill04-sheet.png')
 
 sheet_y = 56
 
+def stand():
+    frame = 0
+    for x in range(0, 400, 10):
+        clear_canvas()
+        character.clip_draw(frame * 48, sheet_y * 5, 48, sheet_y * 6, 400, 300, 300, 300)
+        update_canvas()
+        frame = (frame + 1) % 11
+        delay(0.1)
+
 def roll():
     frame = 0
     for x in range(0,400,10):
         clear_canvas()
-        character.clip_draw(frame * 100, 0, 48, sheet_y, 400, 300, 300, 300)
+        character.clip_draw(frame * 49, 0, 49, sheet_y, 400, 300, 300, 300)
         update_canvas()
-        frame = (frame + 1) % 9
+        frame = (frame + 1) % 8
         delay(0.05)
 
 def walk():
@@ -24,10 +33,10 @@ def run():
     pass
 
 
-def stand():
-    pass
+
 
 while(1): #무한 반복
     roll()
+    stand()
 
 close_canvas()
