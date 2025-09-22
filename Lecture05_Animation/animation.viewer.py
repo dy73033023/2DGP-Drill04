@@ -27,13 +27,20 @@ def stand():
         delay(0.05)
 
 def walk():
-    pass
+    frame = 0
+    for x in range(0, 400, 10):
+        clear_canvas()
+        character.clip_draw(frame * 44 + 5, sheet_y, 44, sheet_y , 400, 300, 300, 300)
+        update_canvas()
+        frame = (frame + 1) % 7
+        delay(0.05)
 
 def run():
     pass
 
 while(1): #무한 반복
-    roll()
-    stand()
+    #roll()
+    #stand()
+    walk()
 
 close_canvas()
