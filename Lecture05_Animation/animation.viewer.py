@@ -27,7 +27,7 @@ def run():
 def stand():
     pass
 
-while(1):
+while(1): #무한 반복
     roll()
 
 close_canvas()
