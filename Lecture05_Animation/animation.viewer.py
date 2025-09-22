@@ -21,12 +21,10 @@ def stand():
     frame = 0
     for x in range(0, 400, 10):
         clear_canvas()
-        character.clip_draw(frame * 47, sheet_y * 5, 47, sheet_y * 6, 400, 300, 300, 300)
+        character.clip_draw(frame * 44+5, sheet_y * 5, 44, sheet_y * 6, 400, 300, 300, 300)
         update_canvas()
-        frame = (frame + 1) % 10
-        delay(0.1)
-
-
+        frame = (frame + 1) % 5
+        delay(0.05)
 
 def walk():
     pass
@@ -35,7 +33,7 @@ def run():
     pass
 
 while(1): #무한 반복
-    #roll()
+    roll()
     stand()
 
 close_canvas()
